@@ -7,6 +7,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public interface CourseRepository extends JpaRepository <Course, Long> {
 
-
+    Course findByName(String name);
 
 }
