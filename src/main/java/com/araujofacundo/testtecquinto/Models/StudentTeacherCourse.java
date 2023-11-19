@@ -1,28 +1,32 @@
 package com.araujofacundo.testtecquinto.Models;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.araujofacundo.testtecquinto.Models.subclass.Student;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Setter
-public class UserCourse {
+public class StudentTeacherCourse {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
-    private LocalDateTime registeredAt;
-    @ManyToOne
-    @JoinColumn (name = "user_id")
-    private User user;
-    @ManyToOne
-    @JoinColumn (name = "course_id")
-    private Course course;
+    @NonNull
+    private LocalDateTime registeredDate;
 
+    @ManyToOne
+    @JoinColumn(name = "student_id")
+    private Student student;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private TeacherCourse course;
 
 }

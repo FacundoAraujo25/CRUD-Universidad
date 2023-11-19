@@ -1,9 +1,12 @@
 package com.araujofacundo.testtecquinto.Repositories;
 
-import com.araujofacundo.testtecquinto.Models.TeacherCourse;
+import com.araujofacundo.testtecquinto.Models.subclass.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserCourseRepository extends JpaRepository<TeacherCourse, Long> {
+public interface StudentRepository extends JpaRepository<Student, Long> {
+
+    Student findByEmail(String email);
+
 }

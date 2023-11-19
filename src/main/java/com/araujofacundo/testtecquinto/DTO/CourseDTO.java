@@ -3,28 +3,26 @@ package com.araujofacundo.testtecquinto.DTO;
 import com.araujofacundo.testtecquinto.Models.Course;
 import com.araujofacundo.testtecquinto.Models.Period;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.Set;
+import java.util.stream.Collectors;
 
+@NoArgsConstructor
 @Getter
 public class CourseDTO {
 
-    private long id;
+    private long courseId;
     private String name;
-    private Period period;
     private LocalDate startDate, finishDate;
-    private Set<UserCourseDTO> users;
-
-    public CourseDTO() {
-    }
+    private Set<TeacherCourseDTO> teachers;
 
     public CourseDTO(Course course) {
-        this.id = course.getId();
+        this.courseId = course.getId();
         this.name = course.getName();
-        this.period = course.getPeriod();
         this.startDate = course.getStartDate();
         this.finishDate = course.getFinishDate();
-        this.users = course.getUsers();
+        this.teachers = course.getTeachers().stream().map(teacherCourse -> new TeacherCourseDTO(teacherCourse)).collect(Collectors.toSet());
     }
 }

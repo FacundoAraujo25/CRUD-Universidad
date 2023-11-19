@@ -1,7 +1,6 @@
 package com.araujofacundo.testtecquinto.Models;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -11,6 +10,8 @@ import java.util.Set;
 
 
 @Entity
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Setter
 public class Course {
@@ -19,28 +20,20 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
+    @NonNull
     private String name;
-    private Period period;
+    @NonNull
     private LocalDate startDate, finishDate;
 
     //relacion con courses
     @OneToMany(mappedBy = "course",fetch = FetchType.LAZY)
-    private Set<UserCourse> users = new HashSet<>();
+    private Set<TeacherCourse> teachers = new HashSet<>();
 
 
-    public Course() {
-    }
 
-    public Course(String name, Period period, LocalDate startDate, LocalDate finishDate) {
-        this.name = name;
-        this.period = period;
-        this.startDate = startDate;
-        this.finishDate = finishDate;
-    }
-
-    public void addUser (UserCourse user){
-        user.setCourse(this);
-        users.add(user);
+    public void addTeacher (TeacherCourse teacher){
+        teacher.setCourse(this);
+        teachers.add(teacher);
     }
 
 }
