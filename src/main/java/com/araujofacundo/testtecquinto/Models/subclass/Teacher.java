@@ -19,7 +19,7 @@ public class Teacher extends User {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
-
+    private boolean activeTeacher=true;
     @OneToMany(mappedBy = "teacher",fetch = FetchType.LAZY)
     private Set<TeacherCourse> courses = new HashSet<>();
 

@@ -21,6 +21,10 @@ function fetchApiData() {
             document.getElementById('teachersCount').innerText = teachers.length;
             document.getElementById('studentsCount').innerText = students.length;
 
+            fillGeneralTable(students, "Student");
+            fillGeneralTable(teachers, "Teacher");
+            newCourses(courses);
+
         })
         .catch(error => {
             // Manejo de errores
@@ -28,19 +32,51 @@ function fetchApiData() {
         });
 }
 
-function fillTeachersTable(teachers) {
+function fillGeneralTable(data, type) {
     const tableBody = document.getElementById('generalTable').getElementsByTagName('tbody')[0];
-    tableBody.innerHTML = ''; // Limpiar la tabla
+    // tableBody.innerHTML = ''; // Limpiar la tabla
 
-    teachers.forEach(teacher => {
+    data.forEach(user => {
         let row = tableBody.insertRow();
         let nameCell = row.insertCell(0);
-        nameCell.innerText = teacher.name;
+        nameCell.innerText = user.name;
 
-        let detailsCell = row.insertCell(1);
-        detailsCell.innerText = teacher.details;
+        let typeCell = row.insertCell(1);
+        typeCell.innerText = type;
+
+        let anyCourseCell = row.insertCell(2);
+        if (user.courses.filter(course => course.courseWithStudent || course.courseWithTeacher).length !== 0) {
+            anyCourseCell.innerHTML = '<span class="status green"></span>Course/s asigned';
+        }
+        else {
+            anyCourseCell.innerHTML = '<span class="status red"></span>Any course asigned';
+        }
+
+
         // Agregar más celdas según tus datos
     });
+}
+
+function newCourses(courses) {
+    const cardBody = document.getElementById('new-courses');
+
+    coursesInfo = courses.reduce((acc, course) => {
+        if (course.activeCourse) {
+            return (
+                acc +
+                `
+            <div class="course">
+                <div class="info info-courses">
+                        <h4>${course.name}</h4>
+                        <small>Start Date: ${course.startDate}</small>
+                        <small>Finish Date: ${course.finishDate}</small>
+                </div>
+            </div>`
+            );
+        }
+
+    }, "")
+    cardBody.innerHTML = coursesInfo;
 }
 
 fetchApiData();

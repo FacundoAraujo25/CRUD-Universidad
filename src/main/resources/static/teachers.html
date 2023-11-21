@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Pannel</title>
+    <title>Teachers</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./img/logo_quinto_impacto.ico" type="image/x-icon">
 </head>
 
 <body>
+    <div id="app">
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <div class="sidebar-brand">
@@ -77,140 +78,60 @@
                 <div class="projects">
                     <div class="card card-distint">
                         <div class="card-header">
-                            <h3>Recent Teachers</h3>
-                            <label for="select">Este es el select</label>
-                            <select id="select" name="select">
-                                <option value="manzana">No se que va</option>
-                                <option value="banana">X2</option>
-                                <option value="uva">X3</option>
-                                <option value="naranja">X4</option>
+                            <h3>All Teachers</h3>
+                            <button type="button" @click="openModalUser(undefined, true)">Add Teacher</button>
+                            <select id="courseSelect" name="select" v-model="courseSelected">
+                                <option value="all">All Courses</option>
+                                <option v-for="course of selectCourse" :value="course">{{course}}</option>
                             </select>
 
                             <!-- <label for="imput">El imput</label>
                             <input type="text" id="imput" name="" placeholder="No se que va"> -->
                             <div class="search-wrapper">
 
-                                <input type="search" placeholder="Search here" />
+                                <input v-model="searchInput" id="searchInput" type="search" placeholder="Search here" />
                             </div>
                         </div>
 
+                        <div v-if="editUserModal.show" id="modal">
+                            <div class="modal-content">
+                                <span @click="closeModalUser">&times;</span>
+                                <form @submit.prevent="updateCourse">
+                                    <input type="text" v-model="editUserModal.firstName" placeholder="First Name">
+                                    <input type="text" v-model="editUserModal.lastName" placeholder="Last Name">
+                                    <input type="text" v-model="editUserModal.email" placeholder="Email">
+                                    <input type="text" v-model="editUserModal.password" placeholder="Password">
+                                    <button type="submit" @click="createUser">Create Course</button>
+                                </form>
+                            </div>
+                        </div>
 
+                        {{filterData}}
                         <div class="card-body">
-                            <div class="table-responsive">
+                            <div class="table table-responsive">
                                 <table width="100%">
                                     <thead>
                                         <tr>
-                                            <td>Full name</td>
-                                            <td>Course</td>
-                                            <td>Email</td>
+                                            <th></th>
+                                            <th>Full name</th>
+                                            <th>Email</th>
+                                            <th>Has Courses Asigned</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Smith John</td>
-                                            <td>Java</td>
-                                            <td>john@gmail.com</td>
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Victor Manuel</td>
-                                            <td>Ciro Ledesma</td>
-                                            <td>
-                                                <span class="status red"></span> Malo
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Julian Andres</td>
-                                            <td>Quesada Carmona</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermedio
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Andres</td>
-                                            <td>Hernandez</td>
-                                            <td>
-                                                <span class="status green"></span> Bueno
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Manuel</td>
-                                            <td>Chicangana</td>
-                                            <td>
-                                                <span class="status red"></span> Malo
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Julieta</td>
-                                            <td>Quesad</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermedio
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Marleny</td>
-                                            <td>Salazar Orozco</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermedio
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Kelly</td>
-                                            <td>Gil Ortiz</td>
-                                            <td>
-                                                <span class="status green"></span> Bueno
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Bilma</td>
-                                            <td>Ortiz Bermudez</td>
-                                            <td>
-                                                <span class="status red"></span> Malo
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Julian Andres</td>
-                                            <td>Salazar Rayo</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermedio
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Jhonatan</td>
-                                            <td>Velazco</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermdio
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Samir</td>
-                                            <td>Vidal Carmona</td>
-                                            <td>
-                                                <span class="status green"></span> Bueno
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Karen</td>
-                                            <td>Orozco Sanches</td>
-                                            <td>
-                                                <span class="status red"></span> Malo
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Emiliano</td>
-                                            <td>Chicaganda</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermedio
-                                            </td> -->
-                                        </tr>
-                                        <tr>
-                                            <!-- <td>Jhon Jairo</td>
-                                            <td>Salazar Gallego</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermedio
-                                            </td> -->
-                                        </tr>
+                                        <tr v-for="teacher of data">
+                                            <td>{{teacher.teacherId}}</td>
+                                            <td>{{teacher.name}}</td>
+                                            <td>{{teacher.email}}</td>
+                                            <td>{{teacher.activeTeacher?"🟢":"🔴"}}</td>
+                                            <!-- <td><button class='edit-btn'> <box-icon name='edit' type='solid' color='#1f8fc3' ></box-icon> </button></td> -->
+                                            <td><button class='delete-btn' @click="deleteUser(teacher.teacherId)"> <box-icon type='solid' name='trash' color='#1f8fc3' ></box-icon> </button></td>
+                                       </tr>
+                                        
                                     </tbody>
                                 </table>
+                                <img v-cloak v-show="data.length == 0" src="https://http.cat/images/404.jpg" alt="404">
+
                             </div>
                         </div>
                     </div>
@@ -220,6 +141,11 @@
             </div>
         </main>
     </div>
+</div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>

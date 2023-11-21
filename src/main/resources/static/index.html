@@ -49,7 +49,7 @@
                 <input type="search" placeholder="Search here" />
             </div> -->
             <div class="user-wrapper">
-                <img src="img/Avatar.png" width="40px" height="40px" alt="">
+                <img src="./img/logo_quinto_impacto.ico" width="40px" height="40px" alt="">
                 <div>
                     <h4>Administrador</h4>
                     <small>Super Admin</small>
@@ -61,7 +61,7 @@
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <h3>5</h3>
+                        <h3 id="studentsCount"></h3>
                         <span>Total Students</span>
                     </div>
                     <div>
@@ -71,7 +71,7 @@
 
                 <div class="card-single">
                     <div>
-                        <h3>12</h3>
+                        <h3 id="teachersCount"></h3>
                         <span>Total Teachers</span>
                     </div>
                     <div>
@@ -81,7 +81,7 @@
 
                 <div class="card-single">
                     <div>
-                        <h3>25</h3>
+                        <h3 id="coursesCount"></h3>
                         <span>Total Courses</span>
                     </div>
                     <div>
@@ -114,7 +114,7 @@
 
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table width="100%">
+                                <table id="generalTable" width="100%">
                                     <thead>
                                         <tr>
                                             <td>Name</td>
@@ -123,111 +123,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Jhon Deiby</td>
-                                            <td>Salazar Rayo</td>
-                                            <td>
-                                                <span class="status green"></span> Bueno
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Victor Manuel</td>
-                                            <td>Ciro Ledesma</td>
-                                            <td>
-                                                <span class="status red"></span> Malo
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Julian Andres</td>
-                                            <td>Quesada Carmona</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermedio
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Andres</td>
-                                            <td>Hernandez</td>
-                                            <td>
-                                                <span class="status green"></span> Bueno
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Manuel</td>
-                                            <td>Chicangana</td>
-                                            <td>
-                                                <span class="status red"></span> Malo
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Julieta</td>
-                                            <td>Quesad</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermedio
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Marleny</td>
-                                            <td>Salazar Orozco</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermedio
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Kelly</td>
-                                            <td>Gil Ortiz</td>
-                                            <td>
-                                                <span class="status green"></span> Bueno
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Bilma</td>
-                                            <td>Ortiz Bermudez</td>
-                                            <td>
-                                                <span class="status red"></span> Malo
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Julian Andres</td>
-                                            <td>Salazar Rayo</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermedio
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jhonatan</td>
-                                            <td>Velazco</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermdio
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Samir</td>
-                                            <td>Vidal Carmona</td>
-                                            <td>
-                                                <span class="status green"></span> Bueno
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Karen</td>
-                                            <td>Orozco Sanches</td>
-                                            <td>
-                                                <span class="status red"></span> Malo
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Emiliano</td>
-                                            <td>Chicaganda</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermedio
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jhon Jairo</td>
-                                            <td>Salazar Gallego</td>
-                                            <td>
-                                                <span class="status yellow"></span> Intermedio
-                                            </td>
-                                        </tr>
+                                       
                                     </tbody>
                                 </table>
                             </div>
@@ -245,7 +141,7 @@
                             </span></button>
                         </div>
 
-                        <div class="card-body">
+                        <div class="card-body" id="new-courses">
                             <div class="customer">
                                 <div class="info">
                                     <img src="avatars/1.png" width="40px" height="40px" alt="">
@@ -261,145 +157,14 @@
                                 </div>
                             </div>
 
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="avatars/2.png" 40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Karen Orozco</h4>
-                                        <small>Gripa</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <span class="las la-user-circle "></span>
-                                    <span class="lab la-whatsapp "></span>
-                                    <span class="las la-phone "></span>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="avatars/3.png " width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Kelly Ortiz</h4>
-                                        <small>Intoxicación</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <span class="las la-user-circle "></span>
-                                    <span class="lab la-whatsapp "></span>
-                                    <span class="las la-phone "></span>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="avatars/4.png " width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Julian Quesada</h4>
-                                        <small>Malestar general</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <span class="las la-user-circle "></span>
-                                    <span class="lab la-whatsapp "></span>
-                                    <span class="las la-phone "></span>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="avatars/5.png " width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Nelson Stiven</h4>
-                                        <small>Bartolinitis</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <span class="las la-user-circle "></span>
-                                    <span class="lab la-whatsapp "></span>
-                                    <span class="las la-phone "></span>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="avatars/6.png " width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Sara Cortez</h4>
-                                        <small>Acné</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <span class="las la-user-circle "></span>
-                                    <span class="lab la-whatsapp "></span>
-                                    <span class="las la-phone "></span>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="avatars/7.png " width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Mario Ortiz</h4>
-                                        <small>Demencia</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <span class="las la-user-circle "></span>
-                                    <span class="lab la-whatsapp "></span>
-                                    <span class="las la-phone "></span>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="avatars/8.png " width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Leopoldo Sas</h4>
-                                        <small>Eccema</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <span class="las la-user-circle "></span>
-                                    <span class="lab la-whatsapp "></span>
-                                    <span class="las la-phone "></span>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="avatars/9.png " width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Stiven Alrboleda</h4>
-                                        <small>Encefalitis</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <span class="las la-user-circle "></span>
-                                    <span class="lab la-whatsapp "></span>
-                                    <span class="las la-phone "></span>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="avatars/10.png " width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Brandon Carnadona</h4>
-                                        <small>Faringitis</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <span class="las la-user-circle "></span>
-                                    <span class="lab la-whatsapp "></span>
-                                    <span class="las la-phone "></span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

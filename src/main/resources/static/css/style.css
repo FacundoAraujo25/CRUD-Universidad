@@ -14,6 +14,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+[v-cloak]{
+    display: none;
+}
+
 .sidebar {
     width: 345px;
     position: fixed;
@@ -270,6 +274,41 @@ tr td:last-child {
     align-items: center;
 }
 
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 35;
+    top: 35;
+    width: 50%;
+    height: 50%;
+    overflow: auto;
+    background-color: #1F8FC3;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 .status.green {
     background: rgb(6, 192, 6);
 }
@@ -297,6 +336,12 @@ tr td:last-child {
 .info {
     display: flex;
     align-items: center;
+}
+
+.info-courses{
+    padding-top: .5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .info img {

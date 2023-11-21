@@ -16,6 +16,7 @@ public class CourseDTO {
     private long courseId;
     private String name;
     private LocalDate startDate, finishDate;
+    private boolean activeCourse;
     private Set<TeacherCourseDTO> teachers;
 
     public CourseDTO(Course course) {
@@ -23,6 +24,7 @@ public class CourseDTO {
         this.name = course.getName();
         this.startDate = course.getStartDate();
         this.finishDate = course.getFinishDate();
+        this.activeCourse = course.isActiveCourse();
         this.teachers = course.getTeachers().stream().map(teacherCourse -> new TeacherCourseDTO(teacherCourse)).collect(Collectors.toSet());
     }
 }

@@ -14,12 +14,14 @@ public class StudentDTO {
     private long studentId;
     private String name, email, password;
     private Set<StudentTeacherCourseDTO> courses;
+    private boolean activeStudent;
 
     public StudentDTO(Student student) {
         this.studentId = student.getId();
         this.name = student.getFullName();
         this.email = student.getEmail();
         this.password = student.getPassword();
+        this.activeStudent = student.isActiveStudent();
         this.courses = student.getCourses().stream().map(course -> new StudentTeacherCourseDTO(course)).collect(Collectors.toSet());
     }
 }

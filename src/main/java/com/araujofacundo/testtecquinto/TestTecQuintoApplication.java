@@ -26,16 +26,24 @@ public class TestTecQuintoApplication {
 	public CommandLineRunner initData(CourseService courseService, TeacherService teacherService, StudentService studentService, TeacherCourseService teacherCourseService, StudentTeacherCourseService studentTeacherCourseService){
 		return (args -> {
 
-			Teacher teacher1 = new Teacher("Gabriela","Rossi","gabiRossi@gmail.com","gabi123");
+			/*Teacher teacher1 = new Teacher("Gabriela","Rossi","gabiRossi@gmail.com","gabi123");
 			Teacher teacher2 = new Teacher("Facundo", "Araujo","facu@gmail.com","facu123");
 
 			Student student1 = new Student("Agustin","Araujo","agu@gmail.com","agu123");
 			Student student2 = new Student("Yuli","Rossi","yuli@gmail.com","yuli123");
 			Student student3 = new Student("Juako","Rossi","juako@gmail.com","juako123");
+			Student student4 = new Student("Juan","Lopez","juan@gmail.com","juan23");
+			Student student5 = new Student("Julian","Perez","juli@gmail.com","juli123");
+			Student student6 = new Student("Agustina","Gonzales","agustina@gmail.com","agus123");
+			Student student7 = new Student("Yolanda","Ponce","yolanda@gmail.com","yolanda123");
 
 			studentService.save(student1);
 			studentService.save(student2);
 			studentService.save(student3);
+			studentService.save(student4);
+			studentService.save(student5);
+			studentService.save(student6);
+			studentService.save(student7);
 
 			Course course1 = new Course("Java Course", LocalDate.now(),LocalDate.now().plusMonths(6));
 			Course course2 = new Course("Front-End Course", LocalDate.now(),LocalDate.now().plusMonths(6));
@@ -85,11 +93,20 @@ public class TestTecQuintoApplication {
 			StudentTeacherCourse studentTeacherCourse2 = new StudentTeacherCourse(LocalDateTime.now().plusHours(1));
 			StudentTeacherCourse studentTeacherCourse3 = new StudentTeacherCourse(LocalDateTime.now().plusHours(2));
 			StudentTeacherCourse studentTeacherCourse4 = new StudentTeacherCourse(LocalDateTime.now().plusHours(3));
+			StudentTeacherCourse studentTeacherCourse5 = new StudentTeacherCourse(LocalDateTime.now().plusHours(4));
+			StudentTeacherCourse studentTeacherCourse6 = new StudentTeacherCourse(LocalDateTime.now().plusHours(5));
+			StudentTeacherCourse studentTeacherCourse7 = new StudentTeacherCourse(LocalDateTime.now().plusHours(6));
+			StudentTeacherCourse studentTeacherCourse8 = new StudentTeacherCourse(LocalDateTime.now().plusHours(7));
+
 
 			studentTeacherCourseService.save(studentTeacherCourse1);
 			studentTeacherCourseService.save(studentTeacherCourse2);
 			studentTeacherCourseService.save(studentTeacherCourse3);
 			studentTeacherCourseService.save(studentTeacherCourse4);
+			studentTeacherCourseService.save(studentTeacherCourse5);
+			studentTeacherCourseService.save(studentTeacherCourse6);
+			studentTeacherCourseService.save(studentTeacherCourse7);
+			studentTeacherCourseService.save(studentTeacherCourse8);
 
 			teacherCourse1.addStudent(studentTeacherCourse1);
 			student1.addCourse(studentTeacherCourse1);
@@ -98,16 +115,31 @@ public class TestTecQuintoApplication {
 			student2.addCourse(studentTeacherCourse2);
 
 			teacherCourse3.addStudent(studentTeacherCourse3);
-			student2.addCourse(studentTeacherCourse2);
-			student3.addCourse(studentTeacherCourse2);
+			student2.addCourse(studentTeacherCourse3);
 
 			teacherCourse4.addStudent(studentTeacherCourse4);
 			student3.addCourse(studentTeacherCourse4);
+
+			teacherCourse4.addStudent(studentTeacherCourse5);
+			student4.addCourse(studentTeacherCourse5);
+
+			teacherCourse2.addStudent(studentTeacherCourse6);
+			student5.addCourse(studentTeacherCourse6);
+
+			teacherCourse3.addStudent(studentTeacherCourse7);
+			student6.addCourse(studentTeacherCourse7);
+
+			teacherCourse1.addStudent(studentTeacherCourse8);
+			student7.addCourse(studentTeacherCourse8);
 
 			studentTeacherCourseService.save(studentTeacherCourse1);
 			studentTeacherCourseService.save(studentTeacherCourse2);
 			studentTeacherCourseService.save(studentTeacherCourse3);
 			studentTeacherCourseService.save(studentTeacherCourse4);
+			studentTeacherCourseService.save(studentTeacherCourse5);
+			studentTeacherCourseService.save(studentTeacherCourse6);
+			studentTeacherCourseService.save(studentTeacherCourse7);
+			studentTeacherCourseService.save(studentTeacherCourse8);
 
 			teacherCourseService.save(teacherCourse1);
 			teacherCourseService.save(teacherCourse2);
@@ -117,6 +149,10 @@ public class TestTecQuintoApplication {
 			studentService.save(student1);
 			studentService.save(student2);
 			studentService.save(student3);
+			studentService.save(student4);
+			studentService.save(student5);
+			studentService.save(student6);
+			studentService.save(student7);*/
 
 		});
 

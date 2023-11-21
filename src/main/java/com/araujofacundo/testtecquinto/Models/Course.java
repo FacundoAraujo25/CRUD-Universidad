@@ -24,7 +24,7 @@ public class Course {
     private String name;
     @NonNull
     private LocalDate startDate, finishDate;
-
+    private boolean activeCourse = true;
     //relacion con courses
     @OneToMany(mappedBy = "course",fetch = FetchType.LAZY)
     private Set<TeacherCourse> teachers = new HashSet<>();

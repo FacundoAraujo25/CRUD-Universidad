@@ -20,7 +20,7 @@ public class StudentTeacherCourse {
     private long id;
     @NonNull
     private LocalDateTime registeredDate;
-
+    private boolean studentWithCourse = true;
     @ManyToOne
     @JoinColumn(name = "student_id")
     private Student student;

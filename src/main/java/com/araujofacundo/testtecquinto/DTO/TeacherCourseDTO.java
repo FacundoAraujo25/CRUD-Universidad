@@ -16,12 +16,14 @@ public class TeacherCourseDTO {
     private long id;
     private String courseName, teacherName;
     private Period period;
+    private boolean courseWithTeacher;
 
     public TeacherCourseDTO(TeacherCourse teacherCourse) {
         this.id = teacherCourse.getId();
         this.courseName = teacherCourse.getCourse().getName();
         this.period = teacherCourse.getPeriod();
         this.teacherName = teacherCourse.getTeacher().getFullName();
+        this.courseWithTeacher = teacherCourse.isCourseWithTeacher();
     }
 
 }

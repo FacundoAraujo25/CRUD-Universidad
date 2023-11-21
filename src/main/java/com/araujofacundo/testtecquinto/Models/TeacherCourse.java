@@ -22,6 +22,7 @@ public class TeacherCourse {
     private long id;
     @NonNull
     private Period period;
+    private boolean courseWithTeacher = true;
     @ManyToOne
     @JoinColumn (name = "teacher_id")
     private Teacher teacher;
